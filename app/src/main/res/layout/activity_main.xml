@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/iv_cal"
+        android:layout_width="match_parent"
+        android:layout_height="400sp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_cal"
+        android:layout_width="match_parent"
+        android:layout_height="100sp"
+        android:gravity="center"
+        android:text=""
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_cal" />
+
+    <LinearLayout
+        android:layout_marginTop="25sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/iv_cal"
+        android:id="@+id/li1">
+        <Button
+            android:id="@+id/btn_select"
+            android:layout_width="0sp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="选择图片"
+            app:layout_constraintTop_toBottomOf="@id/tv_cal" />
+
+        <Button
+            android:id="@+id/btn_calgray"
+            android:layout_width="0sp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="计算灰度"
+            app:layout_constraintLeft_toRightOf="@id/btn_select"
+            app:layout_constraintTop_toBottomOf="@id/tv_cal" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/li1"
+        android:id="@+id/li2">
+
+        <Button
+            android:id="@+id/btn_camera"
+            android:layout_width="0sp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="拍照选择"
+            />
+
+        <Button
+            android:id="@+id/btn_allfile"
+            android:layout_width="0sp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="所有文件" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/li2"
+        android:id="@+id/li3">
+
+        <Button
+            android:id="@+id/btn_ucrop"
+            android:layout_width="0sp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="裁剪框选" />
+    </LinearLayout>
+    
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/li3"
+        android:id="@+id/rg_cut">
+    
+    <RadioButton
+        android:layout_width="0sp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:id="@+id/rb_11"
+        android:text="1:1"
+        android:checked="true"
+        />
+
+        <RadioButton
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/rb_43"
+            android:text="4:3"/>
+
+        <RadioButton
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/rb_169"
+            android:text="16:9"/>
+
+        <RadioButton
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/rb_34"
+            android:text="3:4"/>
+
+        <RadioButton
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/rb_916"
+            android:text="9:16"/>
+
+        
+    </RadioGroup>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="file_provider">com.example.myapplication.fileprovider_camera</string>
+    <string name="select">选择图片</string>
+    <string name="calgray">计算灰度</string>
+    <string name="camera">拍照选择</string>
+    <string name="cut">裁剪框选</string>
+</resources>
