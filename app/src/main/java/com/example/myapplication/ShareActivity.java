@@ -77,7 +77,7 @@ public class ShareActivity extends AppCompatActivity {
         shareIntent.setType("image/jpeg");
 
 
-        String imagePath = MediaStore.Images.Media.insertImage(getContentResolver(), screenshot, "screenshot", "Screenshot");
+        String imagePath = MediaStore.Images.Media.insertImage(getContentResolver(), screenshot, System.currentTimeMillis()+"screenshot", "Screenshot");
         Uri imageUri = Uri.parse(imagePath);
         shareIntent.putExtra(Intent.EXTRA_STREAM, imageUri);
 

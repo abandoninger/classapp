@@ -1,5 +1,8 @@
 package com.example.myapplication;
 
+import static android.os.Environment.DIRECTORY_DCIM;
+import static android.os.Environment.DIRECTORY_PICTURES;
+
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
@@ -119,6 +122,14 @@ public class MainActivity extends AppCompatActivity {
         btn_ucrop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                image_uri=my_uri;
+                if(image_uri==null){
+                    String txt = "请选择图片";
+                    int duration = Toast.LENGTH_SHORT;
+                    Toast toast = Toast.makeText(MainActivity.this, txt, duration);
+                    toast.show();
+                    return;
+                }
                 String path=System.currentTimeMillis()+".jpg";
                 File destinationFile = new File(getExternalCacheDir().getAbsolutePath() +"/", path);
                 if (destinationFile.exists()) {
@@ -129,7 +140,7 @@ public class MainActivity extends AppCompatActivity {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-                image_uri=my_uri;
+
                 Uri destinationUri = FileProvider.getUriForFile(getApplicationContext(),
                         "com.example.myapplication.fileprovider_camera",
                         destinationFile);
@@ -157,7 +168,13 @@ public class MainActivity extends AppCompatActivity {
         btn_calgray.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                if(image_uri==null){
+                    String txt = "请选择图片";
+                    int duration = Toast.LENGTH_SHORT;
+                    Toast toast = Toast.makeText(MainActivity.this, txt, duration);
+                    toast.show();
+                    return;
+                }
                 Intent intent=new Intent(MainActivity.this, ShareActivity.class);
                 //intent.setAction("android.intent.action.Share");
                 intent.setData(image_uri);
@@ -172,8 +189,8 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 }
                 String filename=System.currentTimeMillis()+".jpg";
-                File image_file = new File(getExternalCacheDir(), filename);
-                Log.d("111", getExternalCacheDir().getAbsolutePath().toString());
+                File image_file = new File(Environment.getExternalStoragePublicDirectory(DIRECTORY_PICTURES), filename);
+                Log.d("111", Environment.getExternalStoragePublicDirectory(DIRECTORY_DCIM).getAbsolutePath().toString());
                 if (image_file.exists()) {
                     image_file.delete();
                 }
