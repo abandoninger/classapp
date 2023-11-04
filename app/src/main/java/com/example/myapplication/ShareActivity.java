@@ -45,7 +45,7 @@ public class ShareActivity extends AppCompatActivity {
         }
         res=(254.97-res)/253.87;
         res=res*100;
-        String tmp = String.format("灰度值%.2f%%",res);
+        String tmp = String.format("黑度值%.2f%%",res);
 
         tv_result.setText(tmp);
         btn_share.setOnClickListener(new View.OnClickListener() {

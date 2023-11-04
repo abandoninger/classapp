@@ -41,7 +41,7 @@
             android:layout_width="0sp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:text="计算灰度"
+            android:text="计算黑度"
             app:layout_constraintLeft_toRightOf="@id/btn_select"
             app:layout_constraintTop_toBottomOf="@id/tv_cal" />
     </LinearLayout>
